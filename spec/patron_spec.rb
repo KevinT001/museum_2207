@@ -5,5 +5,10 @@ RSpec.describe Patron do
         @patron_1 = Patron.new("Bob", 20)
     end
 
-    
+    it 'exists' do 
+        expect(@patron_1).to be_a(Patron)
+    end
+
+    it 'has attributes' do 
+
 end
