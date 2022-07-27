@@ -4,6 +4,7 @@ class Museum
     def initialize(name)
         @name = name 
         @exhibits = []
+        @patrons = []
     end
 
     def add_exhibit(exhibit)
@@ -12,6 +13,10 @@ class Museum
 
     def recommend_exhibits(patrons)
       @exhibits.find_all{|exhibit| patrons.interests.include?(exhibit.name)}
+    end
+
+    def admit(patron)
+        @patrons << patron 
     end
 
 end
