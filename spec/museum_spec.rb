@@ -45,7 +45,7 @@ RSpec.describe Museum do
 
     it 'new person has interests' do 
         @patron_3.add_interest("Dead Sea Scrolls")
-        expect(@patron_3.interests).to eq("Dead Sea Scrolls")
+        expect(@patron_3.interests).to eq(["Dead Sea Scrolls"])
     end
 
     it 'can admit patrons' do 
@@ -55,6 +55,12 @@ RSpec.describe Museum do
         @dmns.admit(@patron_3)
 
         expect(@dmns.patrons).to eq([@patron_1,@patron_2,@patron_3])
+    end
+
+    it 'can organize patrons by exhibit interests' do 
+        expect(@dmns.patrons_by_exhibit_interest).to eq({@dead_sea_scrolls => [@patron_1, @patron_3],
+                                                         @imax => [@patron_2]
+                                                         @gems_and_minerals => []})
     end
 
 end
