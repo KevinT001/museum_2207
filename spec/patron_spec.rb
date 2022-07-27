@@ -18,8 +18,10 @@ RSpec.describe Patron do
     it 'can add interest to patron' do 
         @patron_1.add_interest("Dead Sea Scrolls")
         @patron_1.add_interest("Gems and Minerals")
+        @patron_2.add_interest("IMAX")
 
         expect(@patron_1.interests).to eq(["Dead Sea Scrolls", "Gems and Minerals"])
+        
     end
 
 end
