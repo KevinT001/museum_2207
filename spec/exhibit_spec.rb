@@ -6,7 +6,8 @@ RSpec.describe Exhibit do
     end
 
     it 'exist' do 
-        expect(@exhibit).to  be_a(Exhibit)
+        expect(@exhibit).to be_a(Exhibit)
     end
+
 
 end
